@@ -61,8 +61,3 @@ class HomeViews(ModelViewSet):
 # def home(request):
 #     home_page = Register.objects.all()
 #     return render(request, 'home.html', {'home_page': home_page})
-#
-#
-# def admin(request):
-#     admin_page = Register.objects.all()
-#     return render(request, 'admin.html', {'admin_page': admin_page})
