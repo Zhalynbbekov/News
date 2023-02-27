@@ -27,8 +27,6 @@ class LoginViews(ModelViewSet):
         serializer = LoginSer(data=request.data)
         serializer.is_valid(raise_exception=True)
         username = request.data["user_name"]
-        # user = authenticate(username=username,
-        #                     password=password)
         user = Register.objects.get(user_name=username)
         print(user)
         if user:
