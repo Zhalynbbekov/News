@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+</head>
+<body>
+<form action="{% url 'login_page' %}" method="post">
+    {% csrf_token %}
+    <label for="uname">Username</label><input type="text" id="uname" name="uname"><br><br>
+    <label for="password">Password</label><input type="text" id="password" name="password"><br><br>
+    {% for i in login_page %}
+        {% if i.user_name == i.user_name and i.password == i.password %}
+            <input type="submit" value="Login">
+            <p><a href="home.html">Go to home page</a></p>
+        {% endif %}
+    {% endfor %}
+</form>
+
+</body>
+</html>

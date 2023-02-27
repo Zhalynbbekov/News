@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+</head>
+<body>
+<form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="lname">Username:</label><br>
+    <label for="uname"></label><input type="text" id="uname" name="uname"><br><br>
+    <label for="password">Password:</label><br>
+    <label for="password"></label><input type="text" id="password" name="password"><br><br>
+    <label for="password_again">Enter a password again:</label><br>
+    <label for="password_again"></label><input type="text" id="password_again" name="password_again"><br><br>
+    <a href="{% url 'login_page' %}"><input type="submit" value="Register"></a>
+    {% for i in register %}
+        {% if i.password == i.password_again %}
+            <p>You have registered successfully!</p>
+        {% else %}
+            <p>The wrong password!</p>
+        {% endif %}
+    {% endfor %}
+    <p>DO YOU HAVE AN ACCOUNT? <a href="{% url 'login_page' %}">Log in</a></p>
+</form>
+
+</body>
+</html>

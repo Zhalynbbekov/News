@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+
+
+<form action="{% url 'home_page' %}" method="post">
+    {% csrf_token %}
+    <h3>Filter</h3>
+    <div>
+        <form>
+            <input type="checkbox" id="vehicle1" name="vehicle1">
+            <label for="vehicle1"> Sport</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2">
+            <label for="vehicle2"> Politics</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3">
+            <label for="vehicle3"> Stars</label><br>
+            <label for="vehicle4"></label><input type="checkbox" id="vehicle4" name="vehicle4">
+            <label for="vehicle3"> Art</label><br>
+            <label for="vehicle5"></label><input type="checkbox" id="vehicle5" name="vehicle5">
+            <label for="vehicle3"> Fashion</label><br><br>
+            <input type="submit" value="Apply">
+        </form>
+    </div>
+
+    <div>
+        <h1>News</h1>
+    </div>
+
+    <div>
+        <form>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-address-book"></i>
+            <i class="fa-solid fa-bars"></i>
+        </form>
+    </div>
+
+    <div>
+        <h3>Заголовок новости</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet
+            odio
+            mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        <p><a href="#">Читать дальше>></a></p>
+        <div>
+            <i class="fa-sharp fa-regular fa-share-nodes"></i>
+        </div>
+    </div>
+    <p><a href="admin.html">Go to admin page</a></p>
+</form>
+</body>
+</html>
